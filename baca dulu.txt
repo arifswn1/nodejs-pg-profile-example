@@ -102,6 +102,9 @@ git init
 git remote add origin https://github.com/arifswn1/nodejs-pg-profile-example.git
 git add .
 git commit -m "first commit"
+>> change to main
+git push origin main
+>> change to master
 git pull origin master
 git push origin master
 
