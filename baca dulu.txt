@@ -108,6 +108,8 @@ git push origin main
 git pull origin master
 git push origin master
 
+jika terjadi error di git > fatal: refusing to merge unrelated histories
+lakukan ini > git pull origin main --allow-unrelated-histories
 
 check git
 --
