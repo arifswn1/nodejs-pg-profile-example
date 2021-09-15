@@ -32,7 +32,10 @@ app.use(cors())
 
 app.get('/' , (req , res)=>{
     db.query(`select * from tb_user`)
-    .then((table) => res.json({ data: table.rows }))
+    .then((table) => res.json({ 
+        status: true,
+        data: table.rows 
+    }))
     .catch((err) => res.json({ error: err }))
 })
 
