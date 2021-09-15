@@ -95,6 +95,7 @@ rm -rf .git
 git clean -n
 git rm --cached .
 
+
 change git heroku to new github
 ---
 git init
