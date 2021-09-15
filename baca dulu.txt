@@ -1,0 +1,124 @@
+https://nodejs-profile-example-one.herokuapp.com/
+
+buat file index.js
+buat file .gitignore
+
+npm init -y
+npm i cors express pg
+
+heroku register > login >  https://dashboard.heroku.com/
+
+heroku command
+---
+heroku login -i
+heroku --version
+heroku update
+
+git remote -v
+heroku git:remote -a herokuAppName
+
+git add . //add all
+git commit -m "first comment"
+git push heroku master
+
+pada dashboard heroku
+    > pilih add resources
+    > pilih add-ons (tambah heroku postgres)
+Jika postgre db di heroku sudah terbuat > lanjut ke terminal di visual studio code
+
+pada dashboard heroku
+    > pilih tab settings
+    > pilih Config Vars > reveal config vars
+    > setup config var > sesuaikan config koneksi database pada nodejs kita (index.js)
+    > buat koneksi client pg menjadi > connectionString: process.env.DATABASE_URL
+
+//connect psql di heroku
+heroku psql
+
+query untuk tambah tabel
+--
+CREATE TABLE tb_user (
+	id serial NOT NULL,
+	nama varchar(50) NOT NULL,
+	alamat varchar(100) NOT NULL,
+	no_telp varchar(15) NOT NULL,
+	CONSTRAINT tb_user_pk PRIMARY KEY (id)
+);
+
+query untuk insert row
+--
+INSERT INTO tb_user (nama,alamat,no_telp) VALUES
+	 ('Arif S','Kedaton','082269837758'),
+	 ('Linda','Kedamaian','-');
+
+\c => move inside a database
+    > \c postgresql-convex-47973 \\switch database
+\dt => show table in database
+    select count(*) from tb_profile;
+
+untuk buat baru melalui line
+--
+heroku create
+git push heroku main > default(main)
+
+cek error heroku
+---
+heroku logs --tail //cek realtime error
+
+change branch master to main
+---
+git checkout -b main //switch branch
+git branch -D master //delete branch
+git branch --list //list branch
+git push heroku main
+referensi : https://help.heroku.com/O0EXQZTA/how-do-i-switch-branches-from-master-to-main
+
+git clone heroku
+--
+heroku plugins:install heroku-repo
+https://git.heroku.com/nodejs-profile-example-one.git
+heroku git:clone -a nodejs-profile-example-one
+
+remove git heroku
+---
+heroku repo:purge_cache -a nodejs-profile-example-one
+heroku repo:reset -a nodejs-profile-example-one
+>> jika sudah di reset > kita akan mencoba clone repo nya > hasilnya empty directory
+>> gunakan git clone > heroku git:clone -a nodejs-profile-example-one
+
+clean git di folder project
+---
+//hapus git
+rm -rf .git
+
+//jika ada git
+git clean -n
+git rm --cached .
+
+change git heroku to new github
+---
+git init
+git remote add origin https://github.com/arifswn1/nodejs-pg-profile-example.git
+git add .
+git commit -m "first commit"
+git pull origin master
+git push origin master
+
+
+check git
+--
+git config --list
+git config --global --list
+git config --global user.email "arifswn1@gmail.com"
+git config --global credential.username "arifswn1"
+
+cek jika permission denied unable to access
+--
+git config credential.helper
+git config credential.helper store
+git config --global credential.helper manager
+git config --global --unset credential.helper
+
+referensi
+---
+https://devcenter.heroku.com/articles/heroku-cli-commands
