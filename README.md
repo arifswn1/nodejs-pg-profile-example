@@ -2,7 +2,7 @@
 ini adalah sample node js menggunakan database postgresql
 
 ## create database postgresql
-* create database db_profile;
+* CREATE DATABASE db_profile;
 * CREATE TABLE tb_user (
 	id serial NOT NULL,
 	nama varchar(50) NOT NULL,
