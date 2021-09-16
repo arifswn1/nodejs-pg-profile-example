@@ -1,2 +1,3 @@
 # nodejs-pg-profile-example
-test nodejs pg
+ini adalah sample node js menggunakan database postgre
+let`s enjoy life !

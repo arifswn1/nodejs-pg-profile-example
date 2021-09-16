@@ -111,6 +111,8 @@ git push origin master
 
 jika terjadi error di git > fatal: refusing to merge unrelated histories
 lakukan ini > git pull origin main --allow-unrelated-histories
+referensi > https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories-on-rebase
+
 
 check git
 --
