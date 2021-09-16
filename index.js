@@ -29,7 +29,6 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
-
 app.get('/' , (req , res)=>{
     db.query(`select * from tb_user`)
     .then((table) => res.json({ 
