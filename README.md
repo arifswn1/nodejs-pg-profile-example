@@ -14,5 +14,11 @@ ini adalah sample node js menggunakan database postgresql
 	 ('Diah','Kedaton','-'),
 	 ('Linda','Kedamaian','-');
 
+# step instal
+* npm install
+* npm run start
+
+# example
+https://nodejs-profile-example-one.herokuapp.com/
 
 let`s enjoy life !
