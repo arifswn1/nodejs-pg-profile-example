@@ -131,3 +131,6 @@ git config --global --unset credential.helper
 referensi
 ---
 https://devcenter.heroku.com/articles/heroku-cli-commands
+
+git rm -r --cached node_modules
+git commit -m "removing node_modules"
